@@ -31,9 +31,15 @@ const offers = [
     quantity: 1,
     title: "1 pote",
     price: "69,90",
-    perUnit: "R$ 69,90 por pote",
+    perUnit: null,
     badge: "Para experimentar",
     savings: null,
+    description:
+      "Uma escolha simples para conhecer a PhysicLab e incluir a Ultra Pure na sua rotina.",
+    highlights: [
+      "Ideal para a primeira compra",
+      "300 g em uma única unidade",
+    ],
     image: "/kit-1-pote.png",
     imageAlt: "Kit com 1 pote de Creatina Ultra Pure PhysicLab",
   },
@@ -44,6 +50,12 @@ const offers = [
     perUnit: "R$ 59,95 por pote",
     badge: "Mais escolhido",
     savings: "Economize R$ 19,90",
+    description:
+      "O melhor equilíbrio entre quantidade e valor para levar duas unidades.",
+    highlights: [
+      "Preço melhor por pote",
+      "Uma unidade extra para ter em casa",
+    ],
     featured: true,
     image: "/kit-2-potes.png",
     imageAlt: "Kit com 2 potes de Creatina Ultra Pure PhysicLab",
@@ -55,6 +67,12 @@ const offers = [
     perUnit: "R$ 56,63 por pote",
     badge: "Maior economia",
     savings: "Economize R$ 39,80",
+    description:
+      "Mais produto em uma única compra com o menor valor por unidade.",
+    highlights: [
+      "O menor preço por pote",
+      "Economia de R$ 39,80 no kit",
+    ],
     image: "/kit-3-potes.png",
     imageAlt: "Kit com 3 potes de Creatina Ultra Pure PhysicLab",
   },
@@ -111,6 +129,26 @@ const faqs = [
 ];
 
 export default function LandingCreatina() {
+  const [showFloatingOffer, setShowFloatingOffer] = React.useState(false);
+
+  React.useEffect(() => {
+    const hero = document.getElementById("inicio");
+
+    if (!hero || !("IntersectionObserver" in window)) {
+      setShowFloatingOffer(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowFloatingOffer(!entry.isIntersecting),
+      { threshold: 0.05 },
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#F7F3EA] text-[#121212] antialiased">
       <style>{`
@@ -153,8 +191,11 @@ export default function LandingCreatina() {
       <Header />
 
       {/* HERO FULLSCREEN */}
-      <section className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-20 text-white md:min-h-screen">
-        <picture className="absolute inset-x-0 bottom-44 top-24 md:inset-0">
+      <section
+        id="inicio"
+        className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-0 text-white md:min-h-screen md:pt-20"
+      >
+        <picture className="absolute inset-x-0 bottom-44 top-12 md:inset-0">
           <source
             media="(max-width: 767px)"
             srcSet="/hero-creatina-mobile-v2.png"
@@ -164,7 +205,7 @@ export default function LandingCreatina() {
             alt="Creatina Ultra Pure PhysicLab"
             fetchPriority="high"
             decoding="async"
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-[88%_center] md:object-center"
           />
         </picture>
 
@@ -195,12 +236,10 @@ export default function LandingCreatina() {
               </p>
             </div>
 
-            <div className="mt-auto pb-1 md:mt-7 md:pb-0">
+            <div className="mt-auto translate-y-4 pb-1 md:mt-7 md:translate-y-0 md:pb-0">
               <div className="reveal-up reveal-delay-2 flex">
                 <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#ofertas"
                   className="inline-flex w-full items-center justify-center rounded-full bg-[#D7B46A] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-black shadow-[0_18px_50px_rgba(215,180,106,0.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] md:w-auto"
                 >
                   Quero minha creatina
@@ -282,10 +321,6 @@ export default function LandingCreatina() {
               O que você sente na prática
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#5F5F5F] sm:text-base sm:leading-8 lg:text-lg">
-              Benefícios claros e fáceis de entender para quem quer evoluir nos
-              treinos com uma rotina simples, consistente e bem feita.
-            </p>
           </div>
 
           <div className="mt-16 space-y-16 lg:mt-20 lg:space-y-24">
@@ -414,7 +449,7 @@ export default function LandingCreatina() {
             </p>
 
             <div className="mt-9 flex justify-center">
-              <PrimaryButton href={whatsappLink}>Comprar agora</PrimaryButton>
+              <PrimaryButton href="#ofertas">Comprar agora</PrimaryButton>
             </div>
           </div>
 
@@ -486,91 +521,6 @@ export default function LandingCreatina() {
             </RevealOnScroll>
           </div>
 
-        </div>
-      </section>
-
-      {/* SOBRE A MARCA */}
-      <section
-        id="marca"
-        className="relative scroll-mt-20 overflow-hidden bg-[#080808] px-4 py-20 text-white sm:px-5 sm:py-24 lg:px-8 lg:py-32"
-      >
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-48 top-1/3 h-[480px] w-[480px] rounded-full bg-[#D7B46A]/[0.04] blur-[150px]" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-        </div>
-
-        <div className="relative mx-auto grid max-w-[1540px] gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-24">
-          <div className="order-2 lg:order-1">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-9 bg-[#D7B46A]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#D7B46A] sm:text-[11px]">
-                Nossa história
-              </span>
-            </div>
-
-            <h2 className="mt-6 max-w-[760px] text-[2.5rem] font-semibold leading-[0.98] tracking-[-0.06em] text-white sm:text-[3.7rem] md:text-[4.35rem] lg:text-[4.75rem]">
-              A PhysicLab foi criada
-              <span className="block text-[#D7B46A]">
-                para simplificar a suplementação.
-              </span>
-            </h2>
-
-            <p className="mt-7 max-w-[680px] text-base leading-8 text-zinc-400 sm:text-lg">
-              Em um mercado com tantas opções e promessas, a marca nasceu com um
-              objetivo direto: tornar a escolha do suplemento mais clara, prática
-              e fácil de encaixar na vida de quem treina.
-            </p>
-
-            <div className="mt-10 border-y border-white/10">
-              <article className="grid gap-4 border-b border-white/10 py-7 sm:grid-cols-[72px_1fr] sm:gap-6">
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D7B46A]">
-                  01
-                </span>
-                <div>
-                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white">
-                    Por que a marca foi criada
-                  </h3>
-                  <p className="mt-3 max-w-[610px] text-sm leading-7 text-zinc-400 sm:text-[15px]">
-                    Para deixar a suplementação menos complicada, com produtos
-                    objetivos e informações que ajudam você a entender o que está
-                    usando e por que aquilo faz sentido na sua rotina.
-                  </p>
-                </div>
-              </article>
-
-              <article className="grid gap-4 py-7 sm:grid-cols-[72px_1fr] sm:gap-6">
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D7B46A]">
-                  02
-                </span>
-                <div>
-                  <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white">
-                    Como ela pode ajudar você
-                  </h3>
-                  <p className="mt-3 max-w-[610px] text-sm leading-7 text-zinc-400 sm:text-[15px]">
-                    Com suplementos simples de incluir no dia a dia e uma proposta
-                    prática para apoiar força, desempenho e evolução nos treinos,
-                    sempre junto de alimentação e descanso adequados.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <RevealOnScroll delay={100}>
-            <div className="order-1 mx-auto w-full max-w-[590px] lg:order-2">
-              <div className="relative aspect-[2/3] overflow-hidden rounded-[30px] border border-white/10 bg-[#0D0D0D] shadow-[0_32px_100px_rgba(0,0,0,0.38)] sm:rounded-[42px]">
-                <img
-                  src="/physiclab-brand-mockup-v2.png"
-                  alt="Mockup da Creatina Ultra Pure e embalagem PhysicLab"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div>
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
 
@@ -657,15 +607,15 @@ export default function LandingCreatina() {
               </div>
 
               <div className="reveal-up reveal-delay-3 mt-10 flex flex-col gap-3 sm:flex-row">
-                <PrimaryButton href={whatsappLink}>
+                <PrimaryButton href="#ofertas">
                   Quero melhorar meu desempenho
                 </PrimaryButton>
 
                 <a
-                  href="#produto"
+                  href="#ofertas"
                   className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[#D7B46A] hover:text-[#D7B46A]"
                 >
-                  Conhecer a creatina
+                  Ver ofertas
                 </a>
               </div>
 
@@ -781,7 +731,7 @@ export default function LandingCreatina() {
       {/* OFERTAS */}
       <section
         id="ofertas"
-        className="relative isolate overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-5 sm:py-24 lg:px-8 lg:py-32"
+        className="relative isolate scroll-mt-0 overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-5 sm:py-24 md:scroll-mt-20 lg:px-8 lg:py-32"
       >
         {/* Iluminação decorativa */}
         <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[#D7B46A]/[0.05] blur-[160px]" />
@@ -874,25 +824,99 @@ export default function LandingCreatina() {
         </div>
       </section>
 
+      {/* SOBRE A MARCA */}
+      <section
+        id="marca"
+        className="relative scroll-mt-20 overflow-hidden border-y border-white/10 bg-[#080808] px-4 py-20 text-white sm:px-5 sm:py-24 lg:px-8 lg:py-28"
+      >
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-white/[0.025] to-transparent" />
+        </div>
+
+        <div className="relative mx-auto grid max-w-[1540px] gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-24">
+          <RevealOnScroll>
+            <div>
+              <div className="flex items-center gap-4">
+                <span className="h-px w-9 bg-[#D7B46A]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.26em] text-[#D7B46A] sm:text-[11px]">
+                  Sobre a PhysicLab
+                </span>
+              </div>
+
+              <h2 className="mt-6 max-w-[760px] text-[2.6rem] font-semibold leading-[0.98] tracking-[-0.055em] text-white sm:text-[3.65rem] lg:text-[4.35rem]">
+                Criada para quem busca
+                <span className="block text-[#D7B46A]">
+                  o próximo nível.
+                </span>
+              </h2>
+
+              <p className="mt-7 max-w-[680px] text-base leading-8 text-zinc-400 sm:text-lg">
+                A PhysicLab nasceu para acompanhar pessoas que transformam esforço
+                em evolução. Unimos qualidade, praticidade e desempenho em produtos
+                pensados para fazer parte de uma rotina ativa.
+              </p>
+
+              <p className="mt-5 max-w-[680px] text-base leading-8 text-zinc-400 sm:text-lg">
+                A Creatina Ultra Pure traduz o nosso propósito: oferecer uma
+                suplementação que valoriza cada treino e acompanha você na
+                construção dos seus resultados.
+              </p>
+
+              <div className="mt-9 flex items-center gap-4 border-t border-white/10 pt-6">
+                <span className="h-px w-9 shrink-0 bg-[#D7B46A]" />
+                <p className="text-sm font-semibold tracking-[0.01em] text-zinc-200 sm:text-base">
+                  PhysicLab. Sua evolução começa aqui.
+                </p>
+              </div>
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={100}>
+            <div className="mx-auto w-full max-w-[680px]">
+              <div className="relative flex min-h-[260px] flex-col items-center justify-center overflow-hidden rounded-[26px] border border-white/10 bg-[#0c0c0c] px-6 py-10 sm:min-h-[340px] sm:rounded-[32px] sm:px-10">
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/60 to-transparent" />
+                <img
+                  src="/physiclab-marca.png"
+                  alt="PhysicLab"
+                  loading="lazy"
+                  decoding="async"
+                  className="relative w-full max-w-[570px] mix-blend-screen"
+                />
+
+                <p className="relative mt-1 text-center text-[9px] font-bold uppercase tracking-[0.28em] text-zinc-500 sm:text-[10px]">
+                  Qualidade · Praticidade · Desempenho
+                </p>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       <Footer />
 
 
       <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-4 left-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#D7B46A] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-black shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition hover:-translate-y-0.5 hover:bg-[#E8CA84] md:hidden"
+        href="#ofertas"
+        aria-hidden={!showFloatingOffer}
+        tabIndex={showFloatingOffer ? 0 : -1}
+        className={`fixed bottom-4 left-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#D7B46A] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-black shadow-[0_18px_50px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] md:hidden ${showFloatingOffer
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-6 opacity-0"
+          }`}
       >
-        Comprar pelo WhatsApp
+        Comprar agora
       </a>
 
       <a
-        href={whatsappLink}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 hidden rounded-full bg-[#D7B46A] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-black shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-0.5 hover:bg-[#E8CA84] md:inline-flex"
+        href="#ofertas"
+        aria-hidden={!showFloatingOffer}
+        tabIndex={showFloatingOffer ? 0 : -1}
+        className={`fixed bottom-5 right-5 z-50 hidden rounded-full bg-[#D7B46A] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-black shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] md:inline-flex ${showFloatingOffer
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-6 opacity-0"
+          }`}
       >
-        Comprar
+        Comprar agora
       </a>
     </main>
   );
@@ -976,12 +1000,10 @@ function Footer() {
             </p>
 
             <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noreferrer"
+              href="#ofertas"
               className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[#D7B46A] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.17em] text-black transition duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84]"
             >
-              Comprar pelo WhatsApp
+              Escolher meu kit
             </a>
           </div>
         </div>
@@ -1000,7 +1022,7 @@ function Footer() {
 
 function Header() {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-50 hidden w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl md:block">
       <div className="mx-auto flex h-20 max-w-[1540px] items-center justify-between px-4 sm:px-5 lg:px-8">
         <a
           href="#"
@@ -1025,9 +1047,7 @@ function Header() {
         </nav>
 
         <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noreferrer"
+          href="#ofertas"
           className="rounded-full bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-black transition hover:bg-[#D7B46A]"
         >
           Comprar
@@ -1041,8 +1061,6 @@ function PrimaryButton({ href, children }) {
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
       className="inline-flex w-full items-center justify-center rounded-full bg-[#D7B46A] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-black shadow-[0_18px_50px_rgba(215,180,106,0.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] sm:w-auto"
     >
       {children}
@@ -1489,6 +1507,8 @@ function OfferCard({
   title,
   price,
   perUnit,
+  description,
+  highlights,
   badge,
   savings,
   image,
@@ -1553,28 +1573,46 @@ function OfferCard({
           </span>
         </div>
 
-        <p className="mt-2.5 text-sm text-zinc-500 lg:text-[15px]">{perUnit}</p>
+        {perUnit && (
+          <p className="mt-2.5 text-sm text-zinc-500 lg:text-[15px]">
+            {perUnit}
+          </p>
+        )}
+
+        <p className="mt-5 text-sm leading-7 text-zinc-400 lg:text-[15px]">
+          {description}
+        </p>
 
         <div className="mt-6 h-px bg-white/10 lg:mt-7" />
 
-        <ul className="mt-5 space-y-3 text-sm text-zinc-400 lg:mt-6 lg:text-[15px]">
-          <li className="flex items-center gap-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-zinc-600" />
-            {quantity * 300} g de creatina
-          </li>
+        <ul className="mt-5 space-y-3 text-sm text-zinc-300 lg:mt-6 lg:text-[15px]">
+          {highlights.map((highlight) => (
+            <li key={highlight} className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D7B46A]" />
+              <span className="leading-6">{highlight}</span>
+            </li>
+          ))}
         </ul>
 
-        <a
-          href={offerLink(quantity, price)}
-          target="_blank"
-          rel="noreferrer"
-          className={`mt-7 inline-flex items-center justify-center rounded-full px-6 py-3.5 text-[10px] font-bold uppercase tracking-[0.16em] transition duration-300 lg:mt-8 lg:py-4 lg:text-[11px] ${featured
-              ? "bg-white text-black hover:bg-[#D7B46A]"
-              : "border border-white/15 bg-white/[0.04] text-white hover:bg-white hover:text-black"
-            }`}
-        >
-          Comprar este kit
-        </a>
+        <div className="mt-7 grid gap-3 lg:mt-8 xl:grid-cols-2">
+          <a
+            href={offerLink(quantity, price)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 py-3.5 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-black transition duration-300 hover:bg-[#D7B46A] lg:text-[11px]"
+          >
+            Comprar agora
+          </a>
+
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 text-center text-[9px] font-bold uppercase tracking-[0.11em] text-white transition duration-300 hover:border-white/30 hover:bg-white hover:text-black lg:text-[10px]"
+          >
+            Comprar pelo WhatsApp
+          </a>
+        </div>
       </div>
     </article>
   );
