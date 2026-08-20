@@ -190,7 +190,7 @@ export default function LandingCreatina() {
       {/* HERO FULLSCREEN */}
       <section
         id="inicio"
-        className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-0 text-white md:min-h-screen md:pt-20"
+        className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-0 text-white md:min-h-[680px] md:pt-20 lg:min-h-[720px]"
       >
         <picture className="absolute inset-x-0 bottom-44 top-12 md:inset-0">
           <source
@@ -210,7 +210,7 @@ export default function LandingCreatina() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 via-[38%] to-transparent md:bg-gradient-to-r md:from-black/92 md:via-black/58 md:via-[46%] md:to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-44 h-24 bg-gradient-to-b from-transparent to-[#050505]/80 md:hidden" />
 
-        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 py-10 sm:px-5 md:min-h-[calc(100vh-80px)] md:items-center md:py-16 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 py-10 sm:px-5 md:min-h-[600px] md:items-center md:py-16 lg:min-h-[640px] lg:px-14 xl:px-20">
           <div className="flex min-h-[920px] w-full max-w-[640px] flex-col md:block md:min-h-0">
             <div>
               <div className="reveal-up flex items-center gap-4">
@@ -268,7 +268,7 @@ export default function LandingCreatina() {
       </section>
 
       {/* PROMESSA FORTE COM BANNER */}
-      <section className="relative left-1/2 min-h-[820px] w-screen -translate-x-1/2 overflow-hidden bg-[#F7F3EA] px-4 py-14 sm:px-5 sm:py-20 md:min-h-[600px] md:py-0 lg:px-8">
+      <section className="relative left-1/2 min-h-[820px] w-screen -translate-x-1/2 overflow-hidden bg-[#F7F3EA] px-4 py-14 sm:px-5 sm:py-20 md:min-h-[600px] md:py-0 lg:px-14 xl:px-20">
         <picture className="absolute inset-0">
           <source
             media="(max-width: 767px)"
@@ -308,7 +308,7 @@ export default function LandingCreatina() {
       {/* BENEFÍCIOS */}
       <section
         id="beneficios"
-        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:px-8 lg:pb-28 lg:pt-20"
+        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:px-14 lg:pb-28 lg:pt-20 xl:px-20"
       >
         <div className="absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-white to-[#F7F3EA]" />
 
@@ -334,7 +334,7 @@ export default function LandingCreatina() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="relative left-1/2 min-h-[760px] w-screen -translate-x-1/2 overflow-hidden bg-[#050505] px-4 py-14 text-white sm:px-5 md:min-h-0 md:py-32 lg:px-8 lg:py-40">
+      <section className="relative left-1/2 min-h-[760px] w-screen -translate-x-1/2 overflow-hidden bg-[#050505] px-4 py-14 text-white sm:px-5 md:min-h-0 md:py-32 lg:px-14 lg:py-40 xl:px-20">
         <picture className="absolute inset-0">
           <source
             media="(max-width: 767px)"
@@ -377,7 +377,7 @@ export default function LandingCreatina() {
 
 
       {/* POR QUE COMPRAR */}
-      <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-5 sm:py-24 lg:px-8 lg:py-32">
+      <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-32 xl:px-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-[#D7B46A]/10 blur-[130px]" />
           <div className="absolute bottom-0 left-0 h-[380px] w-[380px] rounded-full bg-[#F7F3EA] blur-[110px]" />
@@ -469,7 +469,7 @@ export default function LandingCreatina() {
         </div>
       </section>
       {/* PROVA SOCIAL */}
-      <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-5 sm:py-24 lg:px-8 lg:py-32">
+      <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-32 xl:px-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#F7F3EA] blur-[120px]" />
           <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#D7B46A]/10 blur-[140px]" />
@@ -523,7 +523,7 @@ export default function LandingCreatina() {
 
       {/* BLOCO EMOCIONAL DE VENDA */}
       <section className="relative overflow-hidden bg-[#050505] text-white">
-        <div className="relative min-h-[1120px] overflow-hidden px-4 py-16 sm:px-5 sm:py-24 md:min-h-[720px] lg:px-8 lg:py-32">
+        <div className="relative min-h-[1120px] overflow-hidden px-4 py-16 sm:px-5 sm:py-24 md:min-h-[720px] lg:px-14 lg:py-32 xl:px-20">
           <picture className="absolute inset-0">
             <source
               media="(max-width: 767px)"
@@ -632,7 +632,7 @@ export default function LandingCreatina() {
       {/* TRANSIÇÃO ENTRE O DESEJO E A OFERTA */}
       <section
         id="produto"
-        className="relative overflow-hidden bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-8 lg:py-32"
+        className="relative overflow-hidden bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-32 xl:px-20"
       >
         {/* Contraste claro e detalhes discretos da identidade PhysicLab */}
         <div className="pointer-events-none absolute inset-0">
@@ -728,7 +728,7 @@ export default function LandingCreatina() {
       {/* OFERTAS */}
       <section
         id="ofertas"
-        className="relative isolate scroll-mt-0 overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-5 sm:py-24 md:scroll-mt-20 lg:px-8 lg:py-32"
+        className="relative isolate scroll-mt-0 overflow-hidden bg-[#050505] px-4 py-20 text-white sm:px-5 sm:py-24 md:scroll-mt-20 lg:px-14 lg:py-32 xl:px-20"
       >
         {/* Iluminação decorativa */}
         <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[#D7B46A]/[0.05] blur-[160px]" />
@@ -779,7 +779,7 @@ export default function LandingCreatina() {
       </section>
 
       {/* COMO USAR + FAQ */}
-      <section className="bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-8 lg:py-28">
+      <section className="bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-28 xl:px-20">
         <div className="mx-auto grid max-w-[1540px] gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-[28px] border border-[#E4D8BE] bg-white p-6 shadow-[0_24px_80px_rgba(0,0,0,0.06)] sm:rounded-[38px] sm:p-8 md:p-12">
             <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#B99348]">
@@ -824,7 +824,7 @@ export default function LandingCreatina() {
       {/* SOBRE A MARCA */}
       <section
         id="marca"
-        className="relative scroll-mt-20 overflow-hidden border-y border-white/10 bg-[#080808] px-4 py-20 text-white sm:px-5 sm:py-24 lg:px-8 lg:py-28"
+        className="relative scroll-mt-20 overflow-hidden border-y border-white/10 bg-[#080808] px-4 py-20 text-white sm:px-5 sm:py-24 lg:px-14 lg:py-28 xl:px-20"
       >
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-white/[0.025] to-transparent" />
@@ -922,7 +922,7 @@ export default function LandingCreatina() {
 function Footer() {
   return (
     <footer
-      className="relative overflow-hidden bg-[#050505] px-4 pb-28 pt-20 text-white sm:px-5 md:pb-10 lg:px-8 lg:pt-24"
+      className="relative overflow-hidden bg-[#050505] px-4 pb-28 pt-20 text-white sm:px-5 md:pb-10 lg:px-14 lg:pt-24 xl:px-20"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-[#D7B46A]/10 blur-[140px]" />
@@ -1020,7 +1020,7 @@ function Footer() {
 function Header() {
   return (
     <header className="fixed left-0 top-0 z-50 hidden w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl md:block">
-      <div className="mx-auto flex h-20 max-w-[1540px] items-center justify-between px-4 sm:px-5 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-[1540px] items-center justify-between px-4 sm:px-5 lg:px-14 xl:px-20">
         <a
           href="#"
           className="text-sm font-bold uppercase tracking-[0.24em] text-white"
