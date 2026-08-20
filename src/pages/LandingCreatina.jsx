@@ -190,7 +190,7 @@ export default function LandingCreatina() {
       {/* HERO FULLSCREEN */}
       <section
         id="inicio"
-        className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-0 text-white md:min-h-[680px] md:pt-20 lg:min-h-[720px]"
+        className="relative min-h-[1080px] overflow-hidden bg-[#050505] pt-0 text-white md:min-h-[88vh] md:pt-20"
       >
         <picture className="absolute inset-x-0 bottom-44 top-12 md:inset-0">
           <source
@@ -198,7 +198,7 @@ export default function LandingCreatina() {
             srcSet="/hero-creatina-mobile-v2.png"
           />
           <img
-            src="/hero-creatina-desktop-v2.png"
+          src="/hero-creatina-desktop-v8.png"
             alt="Creatina Ultra Pure PhysicLab"
             fetchPriority="high"
             decoding="async"
@@ -210,7 +210,7 @@ export default function LandingCreatina() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 via-[38%] to-transparent md:bg-gradient-to-r md:from-black/92 md:via-black/58 md:via-[46%] md:to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-44 h-24 bg-gradient-to-b from-transparent to-[#050505]/80 md:hidden" />
 
-        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 py-10 sm:px-5 md:min-h-[600px] md:items-center md:py-16 lg:min-h-[640px] lg:px-14 xl:px-20">
+        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 py-10 sm:px-5 md:min-h-[calc(88vh-80px)] md:items-center md:py-16 lg:px-14 xl:px-20">
           <div className="flex min-h-[920px] w-full max-w-[640px] flex-col md:block md:min-h-0">
             <div>
               <div className="reveal-up flex items-center gap-4">
@@ -1019,13 +1019,18 @@ function Footer() {
 
 function Header() {
   return (
-    <header className="fixed left-0 top-0 z-50 hidden w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl md:block">
+    <header className="absolute left-0 top-0 z-50 hidden w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl md:block">
       <div className="mx-auto flex h-20 max-w-[1540px] items-center justify-between px-4 sm:px-5 lg:px-14 xl:px-20">
         <a
-          href="#"
-          className="text-sm font-bold uppercase tracking-[0.24em] text-white"
+          href="#inicio"
+          aria-label="Voltar ao início"
+          className="inline-flex items-center"
         >
-          PhysicLab
+          <img
+            src="/physiclab-logo-menu.png"
+            alt="PhysicLab"
+            className="h-9 w-auto object-contain"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-400 md:flex">
@@ -1042,13 +1047,6 @@ function Header() {
             Dúvidas
           </a>
         </nav>
-
-        <a
-          href="#ofertas"
-          className="rounded-full bg-white px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-black transition hover:bg-[#D7B46A]"
-        >
-          Comprar
-        </a>
       </div>
     </header>
   );
