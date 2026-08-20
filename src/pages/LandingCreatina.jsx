@@ -210,13 +210,12 @@ export default function LandingCreatina() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/20 via-[38%] to-transparent md:bg-gradient-to-r md:from-black/92 md:via-black/58 md:via-[46%] md:to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-44 h-24 bg-gradient-to-b from-transparent to-[#050505]/80 md:hidden" />
 
-        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 py-10 sm:px-5 md:min-h-[calc(88vh-80px)] md:items-center md:py-16 lg:px-14 xl:px-20">
+        <div className="relative z-10 mx-auto flex min-h-[1000px] max-w-[1540px] items-start px-4 pb-10 pt-24 sm:px-5 md:min-h-[calc(88vh-80px)] md:items-center md:py-16 lg:px-14 xl:px-20">
           <div className="flex min-h-[920px] w-full max-w-[640px] flex-col md:block md:min-h-0">
             <div>
-              <div className="reveal-up flex items-center gap-4">
-                <span className="h-px w-9 bg-[#D7B46A]" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#D7B46A] sm:text-[11px]">
-                  Creatina Ultra Pure · 300 g
+              <div className="reveal-up flex justify-center md:justify-start">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#D7B46A]/35 bg-[#D7B46A]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#E4C77F] backdrop-blur-md md:text-[12px]">
+                  Creatina PhysicLab Ultra Pure
                 </span>
               </div>
 
@@ -227,14 +226,14 @@ export default function LandingCreatina() {
                 </span>
               </h1>
 
-              <p className="reveal-up reveal-delay-1 mt-5 max-w-[340px] text-[15px] leading-7 text-zinc-200 drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:mt-6 md:max-w-[520px] md:text-lg md:leading-8">
+              <p className="reveal-up reveal-delay-1 mx-auto mt-5 max-w-[340px] text-center text-[15px] leading-7 text-zinc-200 drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:mx-0 md:mt-6 md:max-w-[520px] md:text-left md:text-lg md:leading-8">
                 Creatina monohidratada de alta pureza, fácil de usar e feita para
                 quem quer elevar o nível do treino.
               </p>
             </div>
 
             <div className="mt-auto translate-y-4 pb-1 md:mt-7 md:translate-y-0 md:pb-0">
-              <div className="reveal-up reveal-delay-2 flex">
+              <div className="reveal-up reveal-delay-2 flex justify-center md:justify-start">
                 <a
                   href="#ofertas"
                   className="inline-flex w-full items-center justify-center rounded-full bg-[#D7B46A] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-black shadow-[0_18px_50px_rgba(215,180,106,0.24)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] md:w-auto"
@@ -243,7 +242,7 @@ export default function LandingCreatina() {
                 </a>
               </div>
 
-              <ul className="reveal-up reveal-delay-3 mt-4 flex max-w-xl flex-wrap gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-[0.13em] text-zinc-300 sm:text-[11px] md:mt-7">
+              <ul className="reveal-up reveal-delay-3 mt-4 flex max-w-xl flex-wrap justify-center gap-x-5 gap-y-2 text-center text-[10px] font-bold uppercase tracking-[0.13em] text-zinc-300 sm:text-[11px] md:mt-7 md:justify-start md:text-left">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#D7B46A]" />
                   100% monohidratada
@@ -258,7 +257,7 @@ export default function LandingCreatina() {
                 </li>
               </ul>
 
-              <p className="mt-3 max-w-[350px] text-[10px] leading-5 text-zinc-400 sm:max-w-lg sm:text-[11px] md:mt-5">
+              <p className="mx-auto mt-3 max-w-[350px] text-center text-[10px] leading-5 text-zinc-400 sm:max-w-lg sm:text-[11px] md:mx-0 md:mt-5 md:text-left">
                 Suplemento alimentar. Use conforme a recomendação do rótulo. Em
                 caso de dúvidas, consulte um profissional.
               </p>
@@ -1019,8 +1018,8 @@ function Footer() {
 
 function Header() {
   return (
-    <header className="absolute left-0 top-0 z-50 hidden w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl md:block">
-      <div className="mx-auto flex h-20 max-w-[1540px] items-center justify-between px-4 sm:px-5 lg:px-14 xl:px-20">
+    <header className="absolute left-0 top-0 z-50 w-full border-b border-white/10 bg-[#050505]/80 text-white backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-[1540px] items-center justify-center px-4 sm:px-5 md:h-20 md:justify-between lg:px-14 xl:px-20">
         <a
           href="#inicio"
           aria-label="Voltar ao início"
@@ -1029,7 +1028,7 @@ function Header() {
           <img
             src="/physiclab-logo-menu.png"
             alt="PhysicLab"
-            className="h-9 w-auto object-contain"
+            className="h-7 w-auto object-contain md:h-9"
           />
         </a>
 

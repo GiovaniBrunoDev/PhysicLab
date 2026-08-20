@@ -13,6 +13,25 @@ html {
   }
 }
 
+@media (min-width: 1024px) {
+  html {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 767px) {
+  main h1,
+  main h2 {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  main #inicio h1 {
+    margin-inline: 0;
+    text-align: left;
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
