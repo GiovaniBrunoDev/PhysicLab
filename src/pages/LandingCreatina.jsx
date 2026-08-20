@@ -78,11 +78,8 @@ const offers = [
   },
 ];
 
-function offerLink(quantity, price) {
-  const message = `Olá! Quero o kit com ${quantity} ${quantity === 1 ? "pote" : "potes"
-    } da Creatina Ultra Pure PhysicLab por R$ ${price}.`;
-
-  return `https://wa.me/5545999999999?text=${encodeURIComponent(message)}`;
+function purchasePageLink(quantity) {
+  return `/?compra=em-breve&kit=${quantity}`;
 }
 
 const trustItems = [
@@ -124,7 +121,7 @@ const faqs = [
   {
     question: "Como comprar?",
     answer:
-      "Clique no botão de compra e fale direto pelo WhatsApp para consultar disponibilidade, entrega e formas de pagamento.",
+      "Enquanto nosso checkout está sendo atualizado, escolha seu kit e finalize o atendimento pelo WhatsApp.",
   },
 ];
 
@@ -1596,9 +1593,7 @@ function OfferCard({
 
         <div className="mt-7 grid gap-3 lg:mt-8 xl:grid-cols-2">
           <a
-            href={offerLink(quantity, price)}
-            target="_blank"
-            rel="noreferrer"
+            href={purchasePageLink(quantity)}
             className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-5 py-3.5 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-black transition duration-300 hover:bg-[#D7B46A] lg:text-[11px]"
           >
             Comprar agora
