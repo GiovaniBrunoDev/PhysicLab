@@ -198,7 +198,7 @@ export default function LandingCreatina() {
             srcSet="/hero-creatina-mobile-v2.png"
           />
           <img
-          src="/hero-creatina-desktop-v8.png"
+          src="/hero-creatina-desktop-v10.png"
             alt="Creatina Ultra Pure PhysicLab"
             fetchPriority="high"
             decoding="async"
@@ -307,7 +307,7 @@ export default function LandingCreatina() {
       {/* BENEFÍCIOS */}
       <section
         id="beneficios"
-        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:px-14 lg:pb-28 lg:pt-20 xl:px-20"
+        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:mx-8 lg:px-14 lg:pb-28 lg:pt-20 xl:mx-12 xl:px-20"
       >
         <div className="absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-white to-[#F7F3EA]" />
 
@@ -546,13 +546,7 @@ export default function LandingCreatina() {
 
           <div className="relative z-10 mx-auto flex min-h-[940px] max-w-[1540px] items-start md:min-h-[520px] md:items-center">
             <div className="max-w-[900px]">
-              <div className="reveal-up flex items-center gap-4">
-                <span className="h-px w-10 bg-[#D7B46A]" />
-
-                <span className="reveal-up text-[10px] font-bold uppercase tracking-[0.28em] text-[#D7B46A] sm:text-[11px]">
-                  Creatina Ultra Pure PhysicLab
-                </span>
-              </div>
+              
 
 
 
@@ -615,13 +609,6 @@ export default function LandingCreatina() {
                 </a>
               </div>
 
-              <div className="reveal-up reveal-delay-3 mt-10 flex flex-wrap items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-zinc-500 sm:text-[10px] sm:tracking-[0.25em]">
-                <span>Pureza</span>
-                <span className="h-1 w-1 rounded-full bg-[#D7B46A]" />
-                <span>Performance</span>
-                <span className="h-1 w-1 rounded-full bg-[#D7B46A]" />
-                <span>Constância</span>
-              </div>
             </div>
           </div>
         </div>
@@ -763,16 +750,11 @@ export default function LandingCreatina() {
           </div>
 
           {/* Informações inferiores */}
-          <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-8 text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500 sm:text-[11px]">
-            <span>Creatina monohidratada</span>
-
-            <span className="hidden h-1 w-1 rounded-full bg-[#D7B46A] sm:block" />
-
-            <span>300 g por pote</span>
-
-            <span className="hidden h-1 w-1 rounded-full bg-[#D7B46A] sm:block" />
-
-            <span>Compra pelo WhatsApp</span>
+          <div className="mx-auto mt-12 max-w-4xl border-t border-white/10 pt-8 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-400 sm:text-[11px]">
+            <p>
+              <span className="text-[#D7B46A]">Compra segura.</span>{" "}
+              Atendimento direto. Sua evolução começa aqui.
+            </p>
           </div>
         </div>
       </section>
@@ -872,16 +854,14 @@ export default function LandingCreatina() {
               <div className="relative flex min-h-[260px] flex-col items-center justify-center overflow-hidden rounded-[26px] border border-white/10 bg-[#0c0c0c] px-6 py-10 sm:min-h-[340px] sm:rounded-[32px] sm:px-10">
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/60 to-transparent" />
                 <img
-                  src="/physiclab-marca.png"
-                  alt="PhysicLab"
+                  src="/physiclab-marca-v2.png"
+                  alt="PhysicLab Supplements"
                   loading="lazy"
                   decoding="async"
                   className="relative w-full max-w-[570px] mix-blend-screen"
                 />
 
-                <p className="relative mt-1 text-center text-[9px] font-bold uppercase tracking-[0.28em] text-zinc-500 sm:text-[10px]">
-                  Qualidade · Praticidade · Desempenho
-                </p>
+                
               </div>
             </div>
           </RevealOnScroll>
@@ -921,94 +901,49 @@ export default function LandingCreatina() {
 function Footer() {
   return (
     <footer
-      className="relative overflow-hidden bg-[#050505] px-4 pb-28 pt-20 text-white sm:px-5 md:pb-10 lg:px-14 lg:pt-24 xl:px-20"
+      className="relative overflow-hidden bg-[#050505] px-4 pb-28 pt-12 text-white sm:px-5 md:pb-10 lg:px-14 lg:pt-14 xl:px-20"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-[#D7B46A]/10 blur-[140px]" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/70 to-transparent" />
-      </div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/70 to-transparent" />
 
       <div className="relative mx-auto max-w-[1540px]">
-        <div className="grid gap-14 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_0.65fr_0.9fr] lg:gap-20 lg:pb-20">
-          <div className="max-w-xl">
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.26em] text-white"
-            >
-              <span className="h-2 w-2 rounded-full bg-[#D7B46A]" />
-              PhysicLab
-            </a>
+        <nav aria-label="Navegação do rodapé">
+          <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-4 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400 sm:gap-x-9">
+            <li>
+              <a href="#inicio" className="transition hover:text-white">
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="#beneficios" className="transition hover:text-white">
+                Benefícios
+              </a>
+            </li>
+            <li>
+              <a href="#produto" className="transition hover:text-white">
+                Produto
+              </a>
+            </li>
+            <li>
+              <a href="#ofertas" className="transition hover:text-white">
+                Ofertas
+              </a>
+            </li>
+            <li>
+              <a href="#marca" className="transition hover:text-white">
+                Marca
+              </a>
+            </li>
+            <li>
+              <a href="#faq" className="transition hover:text-white">
+                Dúvidas
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-            <h2 className="mt-8 text-4xl font-semibold leading-[1] tracking-[-0.055em] text-white sm:text-5xl">
-              Constância para treinar.
-              <span className="mt-1 block text-[#D7B46A]">
-                Qualidade para evoluir.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-lg text-sm leading-7 text-zinc-400 sm:text-base">
-              Suplementação simples, informação clara e produtos pensados para
-              acompanhar sua rotina de treino todos os dias.
-            </p>
-          </div>
-
-          <nav aria-label="Navegação do rodapé">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#D7B46A]">
-              Navegue
-            </p>
-
-            <ul className="mt-7 space-y-4 text-sm text-zinc-400">
-              <li>
-                <a href="#beneficios" className="transition hover:text-white">
-                  Benefícios
-                </a>
-              </li>
-              <li>
-                <a href="#produto" className="transition hover:text-white">
-                  Produto
-                </a>
-              </li>
-              <li>
-                <a href="#ofertas" className="transition hover:text-white">
-                  Kits e preços
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="transition hover:text-white">
-                  Dúvidas frequentes
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#D7B46A]">
-              Fale com a PhysicLab
-            </p>
-
-            <h3 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-white">
-              Pronto para escolher seu kit?
-            </h3>
-
-            <p className="mt-3 text-sm leading-7 text-zinc-400">
-              Consulte disponibilidade, entrega e formas de pagamento pelo
-              WhatsApp.
-            </p>
-
-            <a
-              href="#ofertas"
-              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[#D7B46A] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.17em] text-black transition duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84]"
-            >
-              Escolher meu kit
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 py-7 text-xs leading-6 text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} PhysicLab. Todos os direitos reservados.</p>
-          <p className="max-w-2xl sm:text-right">
-            Suplemento alimentar. Use conforme a recomendação do rótulo e, em
-            caso de dúvidas, consulte um profissional.
+        <div className="mt-10 border-t border-white/10 pt-7 text-center text-xs leading-6 text-zinc-500">
+          <p>
+            © {new Date().getFullYear()} PhysicLab. Todos os direitos reservados.
           </p>
         </div>
       </div>
