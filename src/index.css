@@ -13,12 +13,6 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
-  html {
-    zoom: 0.9;
-  }
-}
-
 @media (max-width: 767px) {
   main h1,
   main h2 {
