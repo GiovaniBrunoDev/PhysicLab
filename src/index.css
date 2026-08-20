@@ -20,10 +20,6 @@ html {
     text-align: center;
   }
 
-  main #inicio h1 {
-    margin-inline: 0;
-    text-align: left;
-  }
 }
 
 body {

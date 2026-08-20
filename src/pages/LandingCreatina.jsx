@@ -1,7 +1,7 @@
 import React from "react";
 
 const whatsappLink =
-  "https://wa.me/5545999999999?text=Olá! Tenho interesse na Creatina Ultra Pure PhysicLab.";
+  "https://wa.me/5545988106840?text=Olá! Tenho interesse na Creatina Ultra Pure PhysicLab.";
 
 const benefits = [
   {
@@ -78,8 +78,14 @@ const offers = [
   },
 ];
 
+const purchaseLinks = {
+  1: "https://seguro.physiclab.com.br/r/9SGO1NB0IZ",
+  2: "https://seguro.physiclab.com.br/r/PEAKVKNFB9",
+  3: "https://seguro.physiclab.com.br/r/E3LLMBT9NB",
+};
+
 function purchasePageLink(quantity) {
-  return `/?compra=em-breve&kit=${quantity}`;
+  return purchaseLinks[quantity] || "#ofertas";
 }
 
 const trustItems = [
@@ -130,18 +136,41 @@ export default function LandingCreatina() {
 
   React.useEffect(() => {
     const hero = document.getElementById("inicio");
+    const offersSection = document.getElementById("ofertas");
+    const footer = document.getElementById("rodape");
+    const observedElements = [hero, offersSection, footer].filter(Boolean);
 
     if (!hero || !("IntersectionObserver" in window)) {
       setShowFloatingOffer(true);
       return undefined;
     }
 
+    const visibility = new Map([
+      ["inicio", true],
+      ["ofertas", false],
+      ["rodape", false],
+    ]);
+
+    const updateFloatingButton = () => {
+      setShowFloatingOffer(
+        !visibility.get("inicio") &&
+        !visibility.get("ofertas") &&
+        !visibility.get("rodape"),
+      );
+    };
+
     const observer = new IntersectionObserver(
-      ([entry]) => setShowFloatingOffer(!entry.isIntersecting),
-      { threshold: 0.05 },
+      (entries) => {
+        entries.forEach((entry) => {
+          visibility.set(entry.target.id, entry.isIntersecting);
+        });
+
+        updateFloatingButton();
+      },
+      { threshold: 0.01 },
     );
 
-    observer.observe(hero);
+    observedElements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
   }, []);
@@ -198,7 +227,7 @@ export default function LandingCreatina() {
             srcSet="/hero-creatina-mobile-v2.png"
           />
           <img
-          src="/hero-creatina-desktop-v10.png"
+          src="/hero-creatina-desktop-v11.png"
             alt="Creatina Ultra Pure PhysicLab"
             fetchPriority="high"
             decoding="async"
@@ -219,7 +248,7 @@ export default function LandingCreatina() {
                 </span>
               </div>
 
-              <h1 className="reveal-up mt-5 max-w-[620px] text-[3.15rem] font-semibold leading-[0.94] tracking-[-0.065em] text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)] md:mt-7 md:text-[5.4rem] md:leading-[0.9] md:tracking-[-0.075em] lg:text-[6rem]">
+              <h1 className="reveal-up mx-auto mt-5 max-w-[620px] text-center text-[3.15rem] font-semibold leading-[0.94] tracking-[-0.065em] text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)] md:mx-0 md:mt-7 md:text-left md:text-[5.4rem] md:leading-[0.9] md:tracking-[-0.075em] lg:text-[6rem]">
                 Mais força.
                 <span className="block bg-gradient-to-r from-[#F3D891] via-[#D7B46A] to-[#9A7635] bg-clip-text text-transparent">
                   Mais desempenho.
@@ -227,8 +256,7 @@ export default function LandingCreatina() {
               </h1>
 
               <p className="reveal-up reveal-delay-1 mx-auto mt-5 max-w-[340px] text-center text-[15px] leading-7 text-zinc-200 drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:mx-0 md:mt-6 md:max-w-[520px] md:text-left md:text-lg md:leading-8">
-                Creatina monohidratada de alta pureza, fácil de usar e feita para
-                quem quer elevar o nível do treino.
+                Creatina monohidratada de alta pureza: sua aliada para treinar mais forte, render melhor e ir além.
               </p>
             </div>
 
@@ -253,7 +281,7 @@ export default function LandingCreatina() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#D7B46A]" />
-                  Fácil de usar
+                  Zero Carbo
                 </li>
               </ul>
 
@@ -528,7 +556,7 @@ export default function LandingCreatina() {
               srcSet="/bloco-creatina-treino-mobile.png"
             />
             <img
-              src="/bloco-creatina-treino.png"
+              src="/bloco-emocional-physiclab.png"
               alt="Creatina Ultra Pure PhysicLab em ambiente de treino"
               loading="lazy"
               decoding="async"
@@ -599,13 +627,6 @@ export default function LandingCreatina() {
                 <PrimaryButton href="#ofertas">
                   Quero treinar melhor
                 </PrimaryButton>
-
-                <a
-                  href="#ofertas"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-[#D7B46A] hover:text-[#D7B46A]"
-                >
-                  Ver ofertas
-                </a>
               </div>
 
             </div>
@@ -617,94 +638,29 @@ export default function LandingCreatina() {
       {/* TRANSIÇÃO ENTRE O DESEJO E A OFERTA */}
       <section
         id="produto"
-        className="relative overflow-hidden bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-32 xl:px-20"
+        className="relative overflow-hidden bg-[#F7F3EA] px-4 py-20 sm:px-5 sm:py-24 lg:px-14 lg:py-28 xl:px-20"
       >
-        {/* Contraste claro e detalhes discretos da identidade PhysicLab */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-white blur-[100px]" />
           <div className="absolute -right-32 bottom-0 h-[440px] w-[440px] rounded-full bg-[#D7B46A]/15 blur-[130px]" />
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/80 to-transparent" />
 
-        <div className="relative mx-auto grid max-w-[1480px] gap-10 sm:gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
-          {/* Mensagem que prepara a escolha */}
+        <div className="relative mx-auto max-w-[1120px] text-center">
           <RevealOnScroll delay={80}>
-            <div className="max-w-[620px]">
-              <div className="flex items-center gap-4">
-                <span className="h-px w-10 bg-[#B99348]" />
+            <h2 className="text-[2.6rem] font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] sm:text-[3.9rem] md:text-[4.7rem] lg:text-[5rem]">
+              Aproveite e garanta sua
+              <span className="block text-[#B99348]">
+                Creatina Ultra Pure.
+              </span>
+            </h2>
 
-                <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#9A7635] sm:text-[11px]">
-                  O próximo passo é simples
-                </span>
-              </div>
-
-              <h2 className="mt-6 text-[2.4rem] font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] sm:text-[3.7rem] sm:leading-[0.96] sm:tracking-[-0.07em] md:text-[4.5rem] lg:text-[5rem]">
-                Garanta sua creatina.
-                <span className="block text-[#B99348]">
-                  Economize na escolha.
-                </span>
-              </h2>
-
-              <p className="mt-7 max-w-[570px] text-base leading-8 text-[#5F5F5F] sm:text-lg">
-                Para aproveitar os benefícios por mais tempo, a PhysicLab preparou
-                opções para quem quer começar e para quem prefere levar mais potes
-                pagando menos por unidade.
-              </p>
-
-              <a
-                href="#ofertas"
-                className="mt-9 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#111111] px-8 py-4 text-xs font-bold uppercase tracking-[0.17em] text-white shadow-[0_18px_50px_rgba(0,0,0,0.14)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#D7B46A] hover:text-black sm:w-auto"
-              >
-                Ver kits e preços
-                <span aria-hidden="true" className="text-base leading-none">
-                  ↓
-                </span>
-              </a>
-            </div>
-          </RevealOnScroll>
-
-          {/* Resumo das opções antes dos cards de oferta */}
-          <RevealOnScroll delay={180}>
-            <div className="overflow-hidden rounded-[28px] border border-[#E4D8BE] bg-white shadow-[0_28px_90px_rgba(0,0,0,0.07)] sm:rounded-[38px]">
-              <div className="flex flex-col items-start gap-3 border-b border-[#E9E4DA] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7">
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#8A8A8A]">
-                  Escolha de acordo com seu objetivo
-                </span>
-
-                <span className="rounded-full bg-[#F7F3EA] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#9A7635]">
-                  Ultra Pure
-                </span>
-              </div>
-
-              <SalesDecisionLine
-                number="01"
-                title="1 pote para começar"
-                text="Uma opção simples para conhecer a Creatina Ultra Pure PhysicLab."
-              />
-
-              <SalesDecisionLine
-                number="02"
-                title="2 potes com melhor equilíbrio"
-                text="A escolha mais popular para usar por mais tempo e reduzir o valor por pote."
-              />
-
-              <SalesDecisionLine
-                number="03"
-                title="3 potes com maior economia"
-                text="O menor valor por unidade para quem não quer interromper a suplementação."
-              />
-
-              <div className="flex flex-col gap-3 bg-[#111111] px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-7">
-                <p className="text-sm font-semibold tracking-[-0.02em]">
-                  Quanto mais potes, menor o valor por unidade.
-                </p>
-
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D7B46A]">
-                  A partir de R$ 56,63 por pote
-                </span>
-              </div>
-            </div>
+            <p className="mx-auto mt-7 max-w-[820px] text-base leading-8 text-[#5F5F5F] sm:text-lg sm:leading-9">
+              Alta pureza, uso simples e suporte para você treinar com mais força,
+              melhorar o desempenho e buscar evolução muscular. Escolha sua oferta
+              logo abaixo e dê o próximo passo nos seus objetivos.
+            </p>
           </RevealOnScroll>
         </div>
       </section>
@@ -751,8 +707,8 @@ export default function LandingCreatina() {
           {/* Informações inferiores */}
           <div className="mx-auto mt-12 max-w-4xl border-t border-white/10 pt-8 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-400 sm:text-[11px]">
             <p>
-              <span className="text-[#D7B46A]">Compra segura.</span>{" "}
-              Atendimento direto para escolher seu kit com tranquilidade.
+              <span className="text-[#D7B46A]">Compra segura,</span>{" "}
+              entrega garantida.
             </p>
           </div>
         </div>
@@ -888,6 +844,7 @@ export default function LandingCreatina() {
 function Footer() {
   return (
     <footer
+      id="rodape"
       className="relative overflow-hidden bg-[#050505] px-4 pb-28 pt-12 text-white sm:px-5 md:pb-10 lg:px-14 lg:pt-14 xl:px-20"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7B46A]/70 to-transparent" />
@@ -1064,7 +1021,7 @@ function BenefitSplit({ title, text, image, reverse }) {
             : "lg:order-2 lg:pl-6"
         }
       >
-        <h3 className="max-w-xl text-4xl font-semibold leading-[1] tracking-[-0.06em] text-[#111111] md:text-6xl">
+        <h3 className="mx-auto max-w-xl text-center text-4xl font-semibold leading-[1] tracking-[-0.06em] text-[#111111] md:mx-0 md:text-left md:text-6xl">
           {title}
         </h3>
 
@@ -1391,26 +1348,6 @@ function EmotionalLine({ title, text }) {
         </h4>
 
         <p className="mt-2 text-sm leading-7 text-zinc-400">
-          {text}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function SalesDecisionLine({ number, title, text }) {
-  return (
-    <div className="group grid gap-5 border-b border-[#E9E4DA] p-6 transition duration-300 last:border-b-0 hover:bg-[#FAF8F3] sm:grid-cols-[90px_1fr] sm:p-7">
-      <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#B99348]">
-        {number}
-      </span>
-
-      <div>
-        <h4 className="text-2xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#111111]">
-          {title}
-        </h4>
-
-        <p className="mt-3 max-w-xl text-sm leading-7 text-[#5F5F5F] sm:text-[15px]">
           {text}
         </p>
       </div>
