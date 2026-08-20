@@ -11,17 +11,17 @@ const benefits = [
   },
   {
     title: "Mais volume muscular",
-    text: "A Creatina Ultra Pure PhysicLab contribui para músculos com aparência mais cheia e densa, ajudando você a manter uma rotina de evolução muscular com mais constância, treino e alimentação adequada.",
+    text: "A Creatina Ultra Pure PhysicLab contribui para músculos com aparência mais cheia e densa. Com treino e alimentação adequados, ela apoia o desenvolvimento muscular ao longo do tempo.",
     image: "/Beneficio2.png",
   },
   {
     title: "Mais rendimento",
-    text: "Ajuda a apoiar o rendimento em treinos intensos, principalmente em atividades que exigem força, explosão e repetição de esforço. Ideal para musculação, futebol e exercícios de alta intensidade, ela contribui para que você mantenha melhor desempenho durante a rotina de treino, com mais constância e evolução ao longo do tempo.",
+    text: "Ajuda no rendimento em atividades que exigem força, explosão e esforços repetidos. Ideal para musculação, futebol e exercícios de alta intensidade, contribui para sustentar a performance por mais tempo.",
     image: "/Beneficio3.png",
   },
   {
     title: "Melhor recuperação entre séries",
-    text: "Auxilia o corpo a manter energia disponível durante treinos intensos, ajudando você a continuar forte entre uma série e outra. Ideal para quem busca mais constância no desempenho, ela contribui para uma rotina de treino mais eficiente, com melhor resposta em exercícios de força, explosão e alta intensidade.",
+    text: "Auxilia o corpo a manter energia disponível durante treinos intensos, ajudando você a continuar forte entre uma série e outra e a preservar a qualidade do esforço.",
     image: "/Beneficio4.png",
   },
 ];
@@ -35,7 +35,7 @@ const offers = [
     badge: "Para experimentar",
     savings: null,
     description:
-      "Uma escolha simples para conhecer a PhysicLab e incluir a Ultra Pure na sua rotina.",
+      "Uma escolha simples para conhecer a PhysicLab e experimentar a Ultra Pure no dia a dia.",
     highlights: [
       "Ideal para a primeira compra",
       "300 g em uma única unidade",
@@ -86,7 +86,7 @@ const trustItems = [
   "Creatina monohidratada",
   "Fórmula objetiva",
   "Suplemento em pó",
-  "Uso simples na rotina",
+  "Fácil de usar diariamente",
 ];
 
 const specs = [
@@ -101,27 +101,27 @@ const faqs = [
   {
     question: "Creatina engorda?",
     answer:
-      "A creatina não é um suplemento feito para ganho de gordura. Ela pode fazer parte da rotina de quem treina e busca evolução física, sempre junto de alimentação, exercícios e descanso.",
+      "A creatina pode aumentar um pouco o peso por causa da retenção de água nos músculos. Isso não significa ganho de gordura corporal.",
   },
   {
-    question: "Preciso treinar para ter resultado?",
+    question: "Preciso treinar para sentir os benefícios?",
     answer:
-      "Sim. A creatina funciona melhor dentro de uma rotina consistente de treino, alimentação adequada e recuperação.",
+      "Sim. Para melhorar força e desempenho, a creatina deve ser combinada com treino, alimentação adequada e descanso.",
   },
   {
     question: "Posso tomar todos os dias?",
     answer:
-      "O uso deve seguir a recomendação do rótulo ou a orientação de um profissional de saúde ou nutricionista.",
+      "Sim, adultos saudáveis podem usar creatina diariamente. Respeite a quantidade indicada no rótulo ou a orientação de um profissional. Se você tem alguma condição de saúde ou usa medicamentos, procure orientação antes de consumir.",
   },
   {
     question: "Serve para iniciantes?",
     answer:
-      "Pode fazer parte da rotina de iniciantes que praticam atividade física, desde que usada de forma adequada e com orientação quando necessário.",
+      "Sim. Adultos saudáveis que estão começando a treinar também podem usar creatina. O importante é seguir as recomendações do rótulo e manter treino e alimentação adequados.",
   },
   {
     question: "Como comprar?",
     answer:
-      "Enquanto nosso checkout está sendo atualizado, escolha seu kit e finalize o atendimento pelo WhatsApp.",
+      "Escolha um kit na seção de ofertas e clique em “Comprar pelo WhatsApp”. Nossa equipe continuará o atendimento por lá enquanto o checkout está sendo atualizado.",
   },
 ];
 
@@ -297,8 +297,8 @@ export default function LandingCreatina() {
             <p className="reveal-up reveal-delay-2 mt-5 max-w-[650px] text-[0.95rem] leading-7 text-[#4F4F4F] sm:mt-7 sm:text-xl sm:leading-9 lg:text-[1.22rem] lg:leading-9">
               A creatina Ultra Pure PhysicLab é uma das escolhas mais inteligentes
               para quem treina e quer melhorar força, explosão, volume muscular e
-              desempenho. Simples de usar, eficiente e perfeita para fazer parte da
-              sua rotina todos os dias.
+              desempenho. Com uso simples e fórmula eficiente, ela acompanha seus
+              treinos todos os dias.
             </p>
           </div>
         </div>
@@ -307,7 +307,7 @@ export default function LandingCreatina() {
       {/* BENEFÍCIOS */}
       <section
         id="beneficios"
-        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:mx-8 lg:px-14 lg:pb-28 lg:pt-20 xl:mx-12 xl:px-20"
+        className="relative bg-[#F7F3EA] px-4 pb-20 pt-14 sm:px-5 sm:pb-24 sm:pt-16 lg:mx-auto lg:my-10 lg:w-[calc(100%-4rem)] lg:max-w-[1280px] lg:rounded-[36px] lg:px-12 lg:pb-20 lg:pt-14 xl:px-16"
       >
         <div className="absolute left-0 top-0 h-20 w-full bg-gradient-to-b from-white to-[#F7F3EA]" />
 
@@ -319,7 +319,7 @@ export default function LandingCreatina() {
 
           </div>
 
-          <div className="mt-16 space-y-16 lg:mt-20 lg:space-y-24">
+          <div className="mt-16 space-y-16 lg:mt-14 lg:space-y-16">
             {benefits.map((benefit, index) => (
               <RevealOnScroll key={benefit.title} delay={index * 120}>
                 <BenefitSplit
@@ -364,9 +364,9 @@ export default function LandingCreatina() {
 
             <p className="reveal-up reveal-delay-2 mt-6 max-w-[660px] text-[1rem] leading-8 text-zinc-300 sm:text-lg sm:leading-8 lg:text-[1.08rem]">
               A Creatina Ultra Pure PhysicLab foi pensada para quem treina com foco,
-              constância e propósito. Um suplemento simples de incluir na rotina,
-              ideal para apoiar treinos de força, explosão e alta intensidade quando
-              combinado com alimentação adequada e descanso.
+              disciplina e propósito. Fácil de incluir no dia a dia, ela apoia
+              treinos de força, explosão e alta intensidade quando combinada com
+              alimentação adequada e descanso.
             </p>
 
             
@@ -439,9 +439,8 @@ export default function LandingCreatina() {
           <div className="mx-auto mt-14 max-w-4xl text-center">
             <p className="reveal-up reveal-delay-2 text-[1rem] leading-8 text-[#5F5F5F] sm:text-lg sm:leading-8">
               A Ultra Pure PhysicLab foi criada para quem quer uma creatina
-              simples, direta e eficiente para manter na rotina. Uma escolha
-              inteligente para treinar com mais constância, sem pagar por
-              fórmulas desnecessárias.
+              simples, direta e eficiente. Uma escolha inteligente para melhorar o
+              desempenho sem pagar por fórmulas desnecessárias.
             </p>
 
             <div className="mt-9 flex justify-center">
@@ -454,14 +453,14 @@ export default function LandingCreatina() {
             <RevealOnScroll delay={240}>
               <CleanValueBlock
                 title="Custo-benefício real"
-                text="Um dos suplementos mais inteligentes para quem quer resultado sem investir em produtos desnecessários."
+                text="Um dos suplementos mais inteligentes para quem busca eficiência sem investir em produtos desnecessários."
               />
             </RevealOnScroll>
 
             <RevealOnScroll delay={360}>
               <CleanValueBlock
                 title="Para todos os níveis"
-                text="Serve para iniciantes, intermediários e avançados que querem manter uma rotina de treino mais consistente."
+                text="Serve para iniciantes, intermediários e avançados que querem progredir no treino com confiança."
               />
             </RevealOnScroll>
           </div>
@@ -479,14 +478,14 @@ export default function LandingCreatina() {
           <div className="mx-auto max-w-4xl text-center">
 
             <h2 className="reveal-up reveal-delay-1 mt-5 text-[2.35rem] font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] sm:text-[3.6rem] md:text-[4.5rem] lg:text-[5.1rem]">
-              Resultados que aparecem
+              Resultados construídos
               <br />
-              com constância.
+              treino após treino.
             </h2>
 
             <p className="reveal-up reveal-delay-2 mx-auto mt-7 max-w-2xl text-[1rem] leading-8 text-[#5F5F5F] sm:text-lg sm:leading-8">
-              Relatos de quem colocou a Creatina Ultra Pure PhysicLab na rotina e
-              percebeu evolução no treino com uso contínuo, alimentação e descanso.
+              Relatos de quem incluiu a Creatina Ultra Pure PhysicLab no dia a dia e
+              percebeu avanços com uso contínuo, alimentação e descanso.
             </p>
           </div>
 
@@ -504,7 +503,7 @@ export default function LandingCreatina() {
               <SocialProofCard
                 name="Amanda S."
                 detail="Treino intenso"
-                text="Senti que meu treino ficou mais consistente. Consigo sustentar melhor as séries e manter intensidade sem perder tanto rendimento no final."
+                text="Senti que passei a sustentar melhor o ritmo das séries e manter a intensidade sem perder tanto rendimento no final."
               />
             </RevealOnScroll>
 
@@ -512,7 +511,7 @@ export default function LandingCreatina() {
               <SocialProofCard
                 name="João P."
                 detail="Academia 5x semana"
-                text="Para mim, o principal foi performance. Mais força nos exercícios básicos e uma sensação melhor de recuperação entre um treino e outro."
+                text="Para mim, o principal foi a performance. Percebi mais carga nos exercícios básicos e uma sensação melhor de recuperação entre um treino e outro."
               />
             </RevealOnScroll>
           </div>
@@ -553,7 +552,7 @@ export default function LandingCreatina() {
               <h2 className="reveal-up reveal-delay-1 mt-5 max-w-5xl text-[2.35rem] font-semibold leading-[0.97] tracking-[-0.055em] text-white sm:text-[3.8rem] md:text-[4.8rem] lg:text-[5.35rem]">
                 Mais força para treinar.
                 <span className="mt-2 block text-[#D7B46A]">
-                  Mais constância para evoluir.
+                  Mais capacidade para evoluir.
                 </span>
               </h2>
 
@@ -567,7 +566,7 @@ export default function LandingCreatina() {
               <div className="reveal-up reveal-delay-2 mt-9 grid max-w-3xl gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md">
                   <span className="block text-sm font-semibold text-white">
-                    Mais força
+                    Potência
                   </span>
 
                   <span className="mt-1 block text-xs leading-5 text-zinc-400">
@@ -577,7 +576,7 @@ export default function LandingCreatina() {
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md">
                   <span className="block text-sm font-semibold text-white">
-                    Mais desempenho
+                    Rendimento
                   </span>
 
                   <span className="mt-1 block text-xs leading-5 text-zinc-400">
@@ -587,7 +586,7 @@ export default function LandingCreatina() {
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md">
                   <span className="block text-sm font-semibold text-white">
-                    Evolução constante
+                    Progresso contínuo
                   </span>
 
                   <span className="mt-1 block text-xs leading-5 text-zinc-400">
@@ -598,7 +597,7 @@ export default function LandingCreatina() {
 
               <div className="reveal-up reveal-delay-3 mt-10 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton href="#ofertas">
-                  Quero melhorar meu desempenho
+                  Quero treinar melhor
                 </PrimaryButton>
 
                 <a
@@ -641,16 +640,16 @@ export default function LandingCreatina() {
               </div>
 
               <h2 className="mt-6 text-[2.4rem] font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] sm:text-[3.7rem] sm:leading-[0.96] sm:tracking-[-0.07em] md:text-[4.5rem] lg:text-[5rem]">
-                Mantenha a constância.
+                Garanta sua creatina.
                 <span className="block text-[#B99348]">
                   Economize na escolha.
                 </span>
               </h2>
 
               <p className="mt-7 max-w-[570px] text-base leading-8 text-[#5F5F5F] sm:text-lg">
-                A creatina faz parte de uma rotina contínua. Por isso, a PhysicLab
-                preparou opções para quem quer começar e para quem prefere garantir
-                mais potes pagando menos por unidade.
+                Para aproveitar os benefícios por mais tempo, a PhysicLab preparou
+                opções para quem quer começar e para quem prefere levar mais potes
+                pagando menos por unidade.
               </p>
 
               <a
@@ -670,7 +669,7 @@ export default function LandingCreatina() {
             <div className="overflow-hidden rounded-[28px] border border-[#E4D8BE] bg-white shadow-[0_28px_90px_rgba(0,0,0,0.07)] sm:rounded-[38px]">
               <div className="flex flex-col items-start gap-3 border-b border-[#E9E4DA] px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7">
                 <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#8A8A8A]">
-                  Escolha de acordo com sua rotina
+                  Escolha de acordo com seu objetivo
                 </span>
 
                 <span className="rounded-full bg-[#F7F3EA] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#9A7635]">
@@ -687,7 +686,7 @@ export default function LandingCreatina() {
               <SalesDecisionLine
                 number="02"
                 title="2 potes com melhor equilíbrio"
-                text="A escolha mais popular para manter a rotina e reduzir o valor por pote."
+                text="A escolha mais popular para usar por mais tempo e reduzir o valor por pote."
               />
 
               <SalesDecisionLine
@@ -737,8 +736,8 @@ export default function LandingCreatina() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
-              Garanta sua Creatina Ultra Pure e mantenha sua suplementação sem
-              interrupções. Cada pote contém 300 g.
+              Garanta sua Creatina Ultra Pure e tenha seu suplemento sempre à mão.
+              Cada pote contém 300 g.
             </p>
           </div>
 
@@ -753,7 +752,7 @@ export default function LandingCreatina() {
           <div className="mx-auto mt-12 max-w-4xl border-t border-white/10 pt-8 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-400 sm:text-[11px]">
             <p>
               <span className="text-[#D7B46A]">Compra segura.</span>{" "}
-              Atendimento direto. Sua evolução começa aqui.
+              Atendimento direto para escolher seu kit com tranquilidade.
             </p>
           </div>
         </div>
@@ -768,19 +767,18 @@ export default function LandingCreatina() {
             </span>
 
             <h2 className="mt-6 text-[2.1rem] font-semibold leading-[1] tracking-[-0.055em] text-[#111111] sm:text-4xl md:text-6xl">
-              Simples de incluir na rotina.
+              Simples de usar todos os dias.
             </h2>
 
             <p className="mt-7 text-base leading-8 text-[#5F5F5F] sm:text-lg">
               Misture conforme a recomendação do rótulo ou orientação de um
               profissional. Pode ser consumida com água, suco ou junto da sua
-              refeição, de acordo com sua rotina.
+              refeição, de acordo com sua preferência.
             </p>
 
             <p className="mt-5 text-sm leading-7 text-[#777777]">
-              Suplementos não substituem uma alimentação equilibrada. Para
-              melhores resultados, mantenha treino, alimentação e descanso
-              adequados.
+              Suplementos não substituem uma alimentação equilibrada. Para aproveitar
+              melhor o produto, mantenha treino, alimentação e descanso adequados.
             </p>
           </div>
 
@@ -831,13 +829,13 @@ export default function LandingCreatina() {
               <p className="mt-7 max-w-[680px] text-base leading-8 text-zinc-400 sm:text-lg">
                 A PhysicLab nasceu para acompanhar pessoas que transformam esforço
                 em evolução. Unimos qualidade, praticidade e desempenho em produtos
-                pensados para fazer parte de uma rotina ativa.
+                pensados para acompanhar uma vida ativa.
               </p>
 
               <p className="mt-5 max-w-[680px] text-base leading-8 text-zinc-400 sm:text-lg">
                 A Creatina Ultra Pure traduz o nosso propósito: oferecer uma
                 suplementação que valoriza cada treino e acompanha você na
-                construção dos seus resultados.
+                construção dos seus objetivos.
               </p>
 
               <div className="mt-9 flex items-center gap-4 border-t border-white/10 pt-6">
@@ -883,17 +881,6 @@ export default function LandingCreatina() {
         Comprar agora
       </a>
 
-      <a
-        href="#ofertas"
-        aria-hidden={!showFloatingOffer}
-        tabIndex={showFloatingOffer ? 0 : -1}
-        className={`fixed bottom-5 right-5 z-50 hidden rounded-full bg-[#D7B46A] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-black shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E8CA84] md:inline-flex ${showFloatingOffer
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none translate-y-6 opacity-0"
-          }`}
-      >
-        Comprar agora
-      </a>
     </main>
   );
 }
@@ -1057,13 +1044,13 @@ function RevealOnScroll({ children, delay = 0 }) {
 
 function BenefitSplit({ title, text, image, reverse }) {
   return (
-    <article className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <article className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
       <div className={reverse ? "lg:order-2" : "lg:order-1"}>
         <div className="group relative overflow-hidden rounded-[34px] bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.1)]">
           <BenefitImage
             image={image}
             title={title}
-            className="h-[320px] sm:h-[400px] lg:h-[500px]"
+            className="h-[320px] sm:h-[400px] lg:h-[420px]"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
@@ -1073,8 +1060,8 @@ function BenefitSplit({ title, text, image, reverse }) {
       <div
         className={
           reverse
-            ? "lg:order-1 lg:pr-10"
-            : "lg:order-2 lg:pl-10"
+            ? "lg:order-1 lg:pr-6"
+            : "lg:order-2 lg:pl-6"
         }
       >
         <h3 className="max-w-xl text-4xl font-semibold leading-[1] tracking-[-0.06em] text-[#111111] md:text-6xl">
